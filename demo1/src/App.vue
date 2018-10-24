@@ -26,43 +26,39 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
+  box-sizing: content-box;
 }
 
+/* 组件样式修改 */
 
-/* .el-carousel__mask {
-  width: 90vw;
-} */
-/* .el-carousel__item--card {
-  width: 50vw;
-} */
 
 /* 降水概率图表 */
 /* 柱状图间隔 */
-.ivu-progress-vertical .ivu-progress-inner {
+  .rain-rate .ivu-progress-vertical .ivu-progress-outer .ivu-progress-inner {
     margin-left: 56px;
   }
   /* 进度条背景色 */
-  .ivu-progress-bg {
+  .rain-rate .ivu-progress-vertical .ivu-progress-outer .ivu-progress-inner .ivu-progress-bg {
     background-color: rgba(63, 115, 206, .9);
     transition: all .4s linear;
   }
-  .ivu-progress-wrong .ivu-progress-bg {
+  .rain-rate .ivu-progress-vertical.ivu-progress-wrong .ivu-progress-outer .ivu-progress-inner .ivu-progress-bg {
     background-color: rgba(177, 165, 177, .9);
   }
-  .ivu-icon-ios-close-circle:before {
+  .ivu-progress-text-inner .ivu-icon-ios-close-circle:before {
     color: rgba(177, 165, 177, .9);
     font-size: 18px;
   }
-  .ivu-progress-text {
+  .ivu-progress-text .ivu-progress-text-inner{
     color: rgba(63, 115, 206, 1);
   }
   
   /* 返回顶部按钮 */
-  .ivu-back-top-inner {
+  .ivu-back-top.ivu-back-top-show .ivu-back-top-inner {
     background-color: rgba(63, 115, 206, .7);
     border-radius: 3px;
   }
-  .ivu-back-top-inner:hover {
+  .ivu-back-top.ivu-back-top-show .ivu-back-top-inner:hover {
     border-radius: 6px;
     background-color: rgba(63, 115, 206, .9);
     transition: all ease-out .15s;
@@ -70,15 +66,15 @@ body {
   
   
   /* “关于”抽屉 */
-  .ivu-drawer.ivu-drawer-left {
+  .ivu-drawer-wrap .ivu-drawer.ivu-drawer-left .ivu-drawer-content {
     width: 40vw !important;
     opacity: .9;
   }
-  .ivu-drawer-header {
+  .ivu-drawer-wrap .ivu-drawer.ivu-drawer-left .ivu-drawer-content .ivu-drawer-header {
     box-shadow: 0 2px 48px rgba(0, 0, 0, .1);
   }
   /* title */
-  .ivu-drawer-header-inner {
+  .ivu-drawer-wrap .ivu-drawer.ivu-drawer-left .ivu-drawer-content .ivu-drawer-header .ivu-drawer-header-inner {
     font-size: 32px;
     color: rgba(63, 115, 206, .7);
     text-align: center;
@@ -89,7 +85,7 @@ body {
   }
 
   /* 购物车角标 */
-  .ivu-badge-count {
+  .header-icon .ivu-badge .ivu-badge-count {
     background-color: rgb(253, 132, 33);
     border: 0;
     line-height: 20px;
@@ -99,29 +95,29 @@ body {
   .ivu-icon.ivu-icon-ios-arrow-down.ivu-menu-submenu-title-icon {
     display: none;
   }
-  .ivu-menu-submenu {
+  .goods-sort .ivu-menu-submenu {
     font-size: 16px;
     letter-spacing: 3px;
   }
-  .ivu-menu.ivu-menu-light.ivu-menu-horizontal {
+  .goods-sort .ivu-menu.ivu-menu-light.ivu-menu-horizontal {
     background-color: transparent !important;
   }
-  .ivu-menu-submenu-title {
+  .goods-sort .ivu-menu-submenu-title {
     line-height: 60px !important;
   }
-  .ivu-menu-submenu.ivu-menu-opened {
+  .goods-sort .ivu-menu-submenu.ivu-menu-opened {
     border-bottom: 2px solid rgba(63, 115, 206, .9) !important;
   }
-  .ivu-menu-submenu:hover {
+  .goods-sort .ivu-menu-submenu:hover {
     color: rgba(63, 115, 206, .9) !important;
   }
-  .ivu-menu-item {
+  .goods-sort .ivu-menu-drop-list .ivu-menu-item {
     text-align: center;
   }
-  .ivu-menu-item>i {
+  .goods-sort .ivu-menu-drop-list .ivu-menu-item>i {
     margin-right: 18px;
   }
-  .ivu-menu-item.ivu-menu-item-active.ivu-menu-item-selected {
+  .goods-sort .ivu-menu-drop-list .ivu-menu-item.ivu-menu-item-active.ivu-menu-item-selected {
     color: rgba(63, 115, 206, 1) !important;
   }
 
