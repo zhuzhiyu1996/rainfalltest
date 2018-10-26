@@ -25,6 +25,10 @@
                     <step title="结算付款"></step>
                     <step title="提交成功"></step>
                 </steps>
+                <!-- 表单内容 -->
+                <div class="content-1" v-if="showstepone">
+                    step1
+                </div>
                 <i-button type="primary" @click="pre" class="pre"> 上一步</i-button>
                 <i-button type="primary" @click="next" class="next">下一步</i-button>
             </div>
@@ -40,6 +44,7 @@ export default {
             showform: false,
             moneysum: 9999,
             current: 0,
+            showstepone: true,
             columns: [
                     // 表单复选框
                     {
@@ -123,6 +128,9 @@ export default {
             
         }
     },
+    mounted () {
+        this.Showstep()
+    },
     methods: {
         remove (index) {
             this.data.splice(index, 1);
@@ -135,6 +143,15 @@ export default {
                     // 订单成功提交
                     this.$router.push({ path: '/' })
                 } else {
+                    var cur = this.current;
+                    for (let i=0; i<=3; i++) {
+                        if (cur==0) {
+                            console.log(1)
+                        }else if (cur==1) {
+                            console.log(2)
+                        }
+                        cur +=1;
+                    }
                     this.current += 1;
                 }
         },
@@ -145,7 +162,10 @@ export default {
                 } else {
                     this.current -= 1;
                 }
-        }
+        },
+        Showstep () {
+            
+        } 
     }
 }
 </script>
