@@ -14,7 +14,7 @@ export default {
 <style>
 
 /* 引入iconfont样式文件 */
-@import url("//at.alicdn.com/t/font_883547_1lihkdka34.css");
+@import url("//at.alicdn.com/t/font_883547_5nlejbtosu7.css");
 
 body {
   margin: 0;
@@ -66,6 +66,10 @@ body {
   
   
   /* “关于”抽屉 */
+  .ivu-drawer-mask {
+    /* overflow-y: scroll; */
+    margin-left: calc(100vw - 100%);
+  }
   .ivu-drawer-wrap .ivu-drawer.ivu-drawer-left .ivu-drawer-content {
     width: 40vw !important;
     opacity: .9;
@@ -82,6 +86,12 @@ body {
     height: 32px;
     line-height: 32px;
     letter-spacing: 16px;
+  }
+
+  /* 用户下拉列表 */
+  .header-icon .ivu-dropdown .ivu-select-dropdown .ivu-dropdown-menu .ivu-dropdown-item {
+    text-align: center;
+    letter-spacing: .8px;
   }
 
   /* 购物车角标 */
@@ -121,6 +131,47 @@ body {
     color: rgba(63, 115, 206, 1) !important;
   }
 
+  /* 购物车表单 */
+  .ivu-table-row {
+    height: 120px;
+  }
 
+  /* 购物车遮罩层表单 */
+  .mask .form .ivu-steps .ivu-steps-head {
+    background-color: transparent;
+  }
+  .mask .form .ivu-steps .ivu-steps-title{
+    background-color: #f8f8f9;
+  }
+  .mask .ivu-steps.ivu-steps-horizontal{
+    margin-top: 36px;
+    margin-left: 48px;
+  }
+  .mask .form .ivu-steps .ivu-steps-head .ivu-steps-head-inner {
+    border: 0;
+    background-color: rgba(63, 115, 206, .8);
+  }
+  .mask .form .ivu-steps-item.ivu-steps-status-wait .ivu-steps-head-inner {
+    background-color: #ffffff;
+  }
+  .mask .form .ivu-steps-item.ivu-steps-status-finish .ivu-steps-head-inner {
+    background-color: #ffffff;
+  }
+  .mask .form .ivu-steps-item.ivu-steps-status-finish .ivu-steps-tail i::after {
+    background-color: rgba(63, 115, 206, .8);
+  }
+  .mask .form .ivu-btn.ivu-btn-primary {
+    border: 0;
+    background-color: rgba(63, 115, 206, .8);
+    position: absolute;
+  }
+  .mask .form .ivu-btn.ivu-btn-primary.pre {
+    bottom: 20px;
+    right: 110px;
+  }
+  .mask .form .ivu-btn.ivu-btn-primary.next {
+    bottom: 20px;
+    right: 30px;
+  }
 
 </style>

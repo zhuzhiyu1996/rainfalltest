@@ -3,12 +3,19 @@
         <!-- 顶部 -->
         <div class="header">
             <!-- logo图片 -->
-            <a class="header-logo" @click="startloadingbar" href=""><img src="../assets/雨幕logo10.png" alt="logo"></a>
+            <a class="header-logo" @click="startloadingbar" href=""><img src="../assets/雨幕logo9.png" alt="logo"></a>
             <!-- 购物车及登录状态icon -->
             <div class="header-icon">
-                <i class="iconfont icon-geren user-icon"></i>
+                <dropdown placement="bottom-end" @on-click="changeMenu">
+                    <i class="iconfont icon-geren user-icon"></i>
+                    <dropdown-menu slot="list">
+                        <dropdown-item name="myorder">我的订单</dropdown-item>
+                        <dropdown-item name="manage">管理账号</dropdown-item>
+                        <dropdown-item name="login">登录/注册</dropdown-item>
+                    </dropdown-menu>
+                </dropdown>
                 <Badge :count="goodsnum">
-                    <i class="iconfont icon-gouwuche1 shoppingcart-icon"></i>
+                    <i class="iconfont icon-gouwuche1 shoppingcart-icon" @click="Toshoppingcart"></i>
                 </Badge>
                 <i class="iconfont icon-guanyu1 about-icon" @click="draweract = true" type="primary"></i>
             </div>
@@ -119,6 +126,19 @@ export default {
   methods: {
         startloadingbar () {
             this.$Loading.start();
+        },
+        // 用户icon下拉菜单选项绑定路由跳转
+        changeMenu (name) {
+            if (name=="login") {
+                this.$router.push({ path: '/login' })
+            }else if (name=="myorder") {
+                this.$router.push({ path: '/order' })
+            }else if (name=="manage") {
+                this.$router.push({ path: '/manage' })
+            }
+        },
+        Toshoppingcart () {
+            this.$router.push({ path: '/shoppingcart' })
         }
     } 
 }
@@ -157,7 +177,7 @@ export default {
                     margin-left: 20px;
                     border-radius: 100%;
                     text-align: center;
-                    text-shadow: 0 0 1px #475669;
+                    // text-shadow: 0 0 1px #475669;
                     transition: all ease-in .2s;
                     display: inline-block;
                     width: 38px;
@@ -166,10 +186,11 @@ export default {
                 }
                 .about-icon {
                     font-size: 31px;
+                    line-height: 40px;
                 }
                 .user-icon:hover, .shoppingcart-icon:hover, .about-icon:hover {
                     color: #ffffff;
-                    background-color:  rgba(63, 115, 206, 1);
+                    background-color:  rgba(63, 115, 206, .85);
                 }
             }
             
