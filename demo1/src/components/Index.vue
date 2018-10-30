@@ -23,7 +23,7 @@
 
         <!-- 轮播图 -->
         <div class="carousel-content">
-            <el-carousel type="card" :interval="3500" height="480px">
+            <el-carousel type="card" :interval="113500" height="480px">
                 <el-carousel-item v-for="item in 4" :key="item">
                     <div class="h3">{{ item }}</div>
                 </el-carousel-item>
@@ -115,6 +115,9 @@
 </template>
 
 <script>
+
+import axios from 'axios'
+
 export default {
   name: 'Index',
   data () {
@@ -122,6 +125,9 @@ export default {
         draweract: false,
         goodsnum: 6
     }
+  },
+  mounted: function () {
+    this.GetGoodslist ();
   },
   methods: {
         startloadingbar () {
@@ -139,8 +145,16 @@ export default {
         },
         Toshoppingcart () {
             this.$router.push({ path: '/shoppingcart' })
+        },
+        //调用商品列表mock数据
+        GetGoodslist () {
+            axios.get ('/goodslist').then((result)=>{
+                var res = result.data;
+                this.goodslist = res.result;
+            })
         }
-    } 
+    }
+    
 }
 </script>
 
@@ -150,10 +164,12 @@ export default {
         margin: 0;
         padding: 0;
         border: 0;
+        box-sizing: border-box;
         // 顶部
         .header {
             position: relative;
             height: 100px;
+            width: 100vw;
             box-shadow: 0 0 24px rgba(0, 0, 0, .1);
             // logo图片
             .header-logo {

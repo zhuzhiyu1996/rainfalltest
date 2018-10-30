@@ -1,0 +1,30 @@
+{
+    "status": "0",
+    "msg":"",
+    "result": [
+        {
+            "productId":"100001",
+            "productName":"文件夹便携式雨伞",
+            "productPrice":"66",
+            "productImg":"雨幕logo9.png"
+        },
+        {
+            "productId":"100002",
+            "productName":"自行车挂式座椅清洁布",
+            "productPrice":"22",
+            "productImg":"雨幕logo11.png"
+        },
+        {
+            "productId":"100003",
+            "productName":"中性木柄晴雨伞",
+            "productPrice":"77",
+            "productImg":""
+        },
+        {
+            "productId":"100004",
+            "productName":"贵妇伞",
+            "productPrice":"188",
+            "productImg":""
+        }
+    ]
+}
