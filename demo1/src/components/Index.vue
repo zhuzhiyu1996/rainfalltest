@@ -68,9 +68,12 @@
             </div>
             <!-- 商品列表 -->
             <div class="goods-list">
-                <div class="goods-list-items"></div>
-                <div class="goods-list-items"></div>
-                <div class="goods-list-items"></div>
+                <div class="goods-list-items">
+                    <div class="goods-list-items-img">
+                        <img src="" alt="商品图片">
+                    </div>
+                    <div class="goods-list-items-data"></div>
+                </div>
             </div>
 
         </div>
