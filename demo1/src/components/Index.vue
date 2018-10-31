@@ -3,7 +3,7 @@
         <!-- 顶部 -->
         <div class="header">
             <!-- logo图片 -->
-            <a class="header-logo" @click="startloadingbar" href=""><img src="../assets/雨幕logo9.png" alt="logo"></a>
+            <a class="header-logo" @click="startloadingbar" href=""><img src="../assets/logo9.png" alt="logo"></a>
             <!-- 购物车及登录状态icon -->
             <div class="header-icon">
                 <dropdown placement="bottom-end" @on-click="changeMenu">
@@ -68,11 +68,20 @@
             </div>
             <!-- 商品列表 -->
             <div class="goods-list">
-                <div class="goods-list-items">
+                <div class="goods-list-items" :key="item.id" v-for="item in goodsList">
+                    <!-- 商品图片 -->
                     <div class="goods-list-items-img">
-                        <img src="" alt="商品图片">
+                        <img :src="'/static/' + item.productImg" alt="商品图片"/>
                     </div>
-                    <div class="goods-list-items-data"></div>
+                    <!-- 右侧内容区块 -->
+                    <div class="goods-list-items-content">
+                        <div class="goods-list-items-data">
+                            {{item.productName}}
+                        </div>
+                        <div class="goods-list-items-btn">
+                            <span class="iconfont">add</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -119,14 +128,15 @@
 
 <script>
 
-import axios from 'axios'
+import axios from 'axios';
 
 export default {
   name: 'Index',
   data () {
     return {
         draweract: false,
-        goodsnum: 6
+        goodsnum: 6,
+        goodsList: []
     }
   },
   mounted: function () {
@@ -153,7 +163,8 @@ export default {
         GetGoodslist () {
             axios.get ('/goodslist').then((result)=>{
                 var res = result.data;
-                this.goodslist = res.result;
+                this.goodsList = res.data.result;
+                console.log(this.goodsList);
             })
         }
     }
@@ -167,7 +178,7 @@ export default {
         margin: 0;
         padding: 0;
         border: 0;
-        box-sizing: border-box;
+        // box-sizing: content-box;
         // 顶部
         .header {
             position: relative;
@@ -280,13 +291,27 @@ export default {
                 background-color: transparent;
                 padding: 12px;
                 overflow-y: auto;
+                display: flex;
+                flex-wrap: wrap;
                 .goods-list-items {
-                    display: inline-block;
-                    width: 29%;
+                    display: flex;
+                    width: 40%;
                     height: 300px;
-                    margin: 16px 2%;
+                    margin: 16px 5%;
                     background-color: rgba(71, 86, 105, .08);
                     border-radius: 6px;
+                    .goods-list-items-img {
+                        width: 300px;
+                        height: 300px;
+                        img {
+                            display: block;
+                            width: 300px;
+                            height: 300px;
+                        }
+                    }
+                    .goods-list-items-content {
+                        
+                    }
                 }
                 .goods-list-items:hover {
                     box-shadow: 0 0 36px rgba(0, 0, 0, .16);

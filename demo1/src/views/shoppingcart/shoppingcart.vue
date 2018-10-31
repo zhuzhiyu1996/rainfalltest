@@ -3,7 +3,7 @@
         <!-- 顶部 -->
         <div class="header">
             <!-- logo图片 -->
-            <a class="header-logo" href=""><img src="../../assets/雨幕logo9.png" alt="logo"></a>
+            <a class="header-logo" href=""><img src="../../assets/logo9.png" alt="logo"></a>
         </div>
 
         <!-- 购物车主体 -->

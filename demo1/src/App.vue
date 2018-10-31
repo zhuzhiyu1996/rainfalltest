@@ -14,7 +14,7 @@ export default {
 <style>
 
 /* 引入iconfont样式文件 */
-@import url("//at.alicdn.com/t/font_883547_5nlejbtosu7.css");
+@import url("//at.alicdn.com/t/font_883547_xw2sf46pl2i.css");
 
 body {
   margin: 0;
@@ -68,7 +68,7 @@ body {
   /* “关于”抽屉 */
   .ivu-drawer-mask {
     /* overflow-y: scroll; */
-    margin-left: calc(100vw - 100%);
+    /* margin-left: calc(100vw - 100%); */
   }
   .ivu-drawer-wrap .ivu-drawer.ivu-drawer-left .ivu-drawer-content {
     width: 40vw !important;
