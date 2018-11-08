@@ -24,8 +24,8 @@
         <!-- 轮播图 -->
         <div class="carousel-content">
             <el-carousel type="card" :interval="113500" height="480px">
-                <el-carousel-item v-for="item in 4" :key="item">
-                    <div class="h3">{{ item }}</div>
+                <el-carousel-item v-for="(banner, index) in bannerPicArray" :key="index">
+                    <img :src="banner.imageUrl" alt="bannerpic" width="100%">
                 </el-carousel-item>
             </el-carousel>
         </div>
@@ -65,6 +65,10 @@
                             <menu-item name="3-3"><i class="iconfont icon-jiage"></i>价格</menu-item>
                     </submenu>
                 </i-menu>
+                <!-- 搜索框 -->
+                <div class="search">
+                    <i-input search placeholder="请输入例如：文件夹便携伞" />
+                </div>
             </div>
             <!-- 商品列表 -->
             <div class="goods-list">
@@ -134,6 +138,13 @@ export default {
   name: 'Index',
   data () {
     return {
+        // 轮播图
+        bannerPicArray: [
+            {imageUrl: '/static/logo9.png'},
+            {imageUrl: '/static/logo11.png'},
+            {imageUrl: '/static/logo9.png'},
+            {imageUrl: '/static/logo11.png'},
+        ],
         draweract: false,
         goodsnum: 6,
         goodsList: []
@@ -285,6 +296,22 @@ export default {
                 width: 100%;
                 height: 60px;
                 box-shadow: 0 0 2px rgba(0, 0, 0, .1) inset;
+                position: relative;
+                .search {
+                    position: absolute;
+                    right: 20px;
+                    top: 15px;
+                    width: 36px;
+                    z-index: 999;
+                    transition: all ease-in .6s;
+                    /deep/.ivu-input:hover, /deep/.ivu-input:focus {
+                        box-shadow: 0 0 15px 1px rgba(0, 0, 0, .12);
+                        border: 1px solid #dcdee2;
+                    }
+                    /deep/.ivu-input {
+                        border-radius: 25px;
+                    }
+                }
             }
             .goods-list {
                 height: 690px;
@@ -309,15 +336,21 @@ export default {
                             height: 300px;
                         }
                     }
-                    .goods-list-items-content {
+                    // .goods-list-items-content {
                         
-                    }
+                    // }
                 }
                 .goods-list-items:hover {
                     box-shadow: 0 0 36px rgba(0, 0, 0, .16);
                     transition: all ease-in-out .2s;
                 }
             }
+        }
+        .goods:hover {
+                .search {
+                    width: 280px;
+                    transition: all ease-in-out .3s;
+                }
         }
 
         // 合作平台、品牌
