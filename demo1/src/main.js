@@ -5,13 +5,13 @@ import App from './App'
 import router from './router'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
+import { Carousel, CarouselItem } from 'element-ui'
 
 
 Vue.config.productionTip = false
 Vue.use(iView)
-Vue.use(ElementUI)
+Vue.use(Carousel)
+Vue.use(CarouselItem)
 
 
 /* eslint-disable no-new */
