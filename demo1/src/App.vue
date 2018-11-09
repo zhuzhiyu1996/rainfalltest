@@ -66,10 +66,10 @@ body {
   
   
   /* “关于”抽屉 */
-  .ivu-drawer-mask {
-    /* overflow-y: scroll; */
-    /* margin-left: calc(100vw - 100%); */
-  }
+  /* .ivu-drawer-mask {
+    overflow-y: scroll;
+    margin-left: calc(100vw - 100%);
+  } */
   .ivu-drawer-wrap .ivu-drawer.ivu-drawer-left .ivu-drawer-content {
     width: 40vw !important;
     opacity: .9;

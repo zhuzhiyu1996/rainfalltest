@@ -48,7 +48,9 @@
         </drawer>
 
         <!-- 我的产品介绍 -->
-        <div class="myproduct"></div>
+        <div class="myproduct">
+            <swiperDefault></swiperDefault>
+        </div>
 
         <!-- 商品列表 -->
         <div class="goods">
@@ -133,6 +135,8 @@
 <script>
 
 import axios from 'axios';
+// 引入自己写的swiper轮播图组件
+import swiperDefault from '../components/swiper/swiperDefault'
 
 export default {
   name: 'Index',
@@ -178,6 +182,10 @@ export default {
                 console.log(this.goodsList);
             })
         }
+    },
+    components: {
+        // 轮播图组件
+        swiperDefault
     }
     
 }
@@ -354,6 +362,9 @@ export default {
         }
 
         // 合作平台、品牌
+        /deep/.ivu-back-top.ivu-back-top-show {
+            z-index: 9999;
+        }
         .partner {
             width: 90vw;
             height: 500px;
