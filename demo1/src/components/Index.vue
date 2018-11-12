@@ -69,7 +69,7 @@
                 </i-menu>
                 <!-- 搜索框 -->
                 <div class="search">
-                    <i-input search placeholder="请输入例如：文件夹便携伞" />
+                    <i-input search clearable="true" placeholder="请输入例如：文件夹便携伞" />
                 </div>
             </div>
             <!-- 商品列表 -->
