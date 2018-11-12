@@ -8,22 +8,17 @@
         <div class="login" v-if="showLogin">
             <img class="login-logo" src="../../assets/logo11.png" alt="logo">
             <i-input prefix="ios-contact-outline"
-                     clearable="true"
+                     clearable
                      placeholder="请输入用户名" 
                      style="width: 280px; height: 60px; margin-top:24px"
-                     v-model="username" />
+                     v-model="userName" />
             <i-input prefix="ios-lock-outline"
-                     clearable="true"
+                     clearable
                      placeholder="请输入密码"
                      style="width: 280px"
-                     v-model="userpsw" />
-            <span class="username-yes iconfont icon-dagou" v-if="shownameyes"></span>
-            <span class="username-no iconfont icon-dacha" v-if="shownameno"></span>
-            <span class="userpsw-yes  iconfont icon-dagou" v-if="showpswyes"></span>
-            <span class="userpsw-no  iconfont icon-dacha" v-if="showpswno"></span>
+                     v-model="userPwd" />
             <i-button style="width: 280px; margin-top: 48px"
-                      class="login-btn"
-                      @click="login">登录</i-button>
+                      class="login-btn">登录</i-button>
             <p class="login-tips" @click="ToRegister">还没账号？点我注册</p>
         </div>
 
@@ -31,11 +26,11 @@
         <div class="register" v-if="showRegister">
             <img class="register-logo" src="../../assets/logo11.png" alt="logo">
             <i-input prefix="ios-contact-outline"
-                     clearable="true"
+                     clearable
                      placeholder="请设置用户名" 
                      style="width: 280px; height: 60px; margin-top:24px" />
             <i-input prefix="ios-lock-outline"
-                     clearable="true"
+                     clearable
                      placeholder="请设置密码"
                      style="width: 280px" />
             <i-button style="width: 280px; margin-top: 48px"
@@ -56,10 +51,6 @@ export default {
         return{
             showLogin: true,
             showRegister: false,
-            shownameyes: false,
-            shownameno: false,
-            showpswyes: false,
-            showpswno: false,
             userName:'',
             userPwd:''
         }
@@ -72,20 +63,6 @@ export default {
         ToLogin(){
             this.showRegister = false
             this.showLogin = true
-        },
-        login(){
-            axios.post("/users/login",{
-                userName:this.userName,
-                userPwd:this.userPwd
-            }).then((response)=>{
-                let res = response.data;
-                if(res.status=="0"){
-                    this.shownameyes = true;
-                    // to-do
-                }else{
-                    this.shownameyes = true;
-                }
-            })
         }
     }
 }
