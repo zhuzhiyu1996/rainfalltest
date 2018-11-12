@@ -85,7 +85,7 @@ body {
     font-weight: 1;
     height: 32px;
     line-height: 32px;
-    letter-spacing: 16px;
+    letter-spacing: 4px;
   }
 
   /* 用户下拉列表 */

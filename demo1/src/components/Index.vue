@@ -41,7 +41,7 @@
         </div>
 
         <!-- “关于”抽屉 -->
-        <drawer title="雨幕" placement="left" :closable="false" v-model="draweract">
+        <drawer title="雨幕·yumoo" placement="left" :closable="false" v-model="draweract">
             <p>Some contents...</p>
             <p>Some contents...</p>
             <p>Some contents...</p>
@@ -85,7 +85,7 @@
                             {{item.productName}}
                         </div>
                         <div class="goods-list-items-btn">
-                            <span class="iconfont">add</span>
+                            <span class="iconfont icon-gouwuche1 add-goods"></span>
                         </div>
                     </div>
                 </div>
@@ -202,7 +202,7 @@ export default {
         .header {
             position: relative;
             height: 100px;
-            width: 100vw;
+            // width: 100vw;
             box-shadow: 0 0 24px rgba(0, 0, 0, .1);
             // logo图片
             .header-logo {
@@ -287,7 +287,7 @@ export default {
         // 我的产品介绍
         .myproduct {
             margin: 36px 0vw;
-            width: 100vw;
+            // width: 100vw;
             height: 500px;
             box-shadow: 0 0 56px rgba(100, 100, 100, 0.1) inset;
             background-color: rgba(235, 233, 229, .25);
@@ -335,6 +335,16 @@ export default {
                     margin: 16px 5%;
                     background-color: rgba(71, 86, 105, .08);
                     border-radius: 6px;
+                    .goods-list-items-content {
+                        .goods-list-items-btn {
+                            .add-goods {
+                                cursor: pointer;
+                            }
+                            .add-goods:hover {
+                                opacity: .8;
+                            }
+                        }
+                    }
                     .goods-list-items-img {
                         width: 300px;
                         height: 300px;
@@ -415,7 +425,7 @@ export default {
 
         // 页脚
         .footer {
-            width: 100vw;
+            // width: 100vw;
             height: 400px;
             margin-top: 48px;
             background-color: rgba(123, 148, 189, .3);
