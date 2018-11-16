@@ -19,10 +19,13 @@
             return {
                 slide: [1,2,3],
                 swiperOption: {
-                    loop:true,
+                    spaceBetween: 30,
+                    // 渐变效果
+                    effect: 'fade',
+                    loop: true,
                     autoplay: {
-                            delay: 3500,
-                            disableOnInteraction: false
+                        delay: 3500,
+                        disableOnInteraction: false
                     },
                     pagination: {
                         el: '.swiper-pagination',

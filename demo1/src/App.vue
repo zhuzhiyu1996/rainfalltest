@@ -14,7 +14,7 @@ export default {
 <style>
 
 /* 引入iconfont样式文件 */
-@import url("//at.alicdn.com/t/font_883547_xw2sf46pl2i.css");
+@import url("//at.alicdn.com/t/font_883547_wd84n6d0ofj.css");
 
 body {
   margin: 0;
